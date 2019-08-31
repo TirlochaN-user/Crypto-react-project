@@ -17,13 +17,12 @@ class App extends Component {
   }
   render() {
     const { coins } = this.state;
-    console.log(coins);
     const coinsList = (coins.length > 0) ? (
       <ShowCoin />
     ) :
       (
         <div>
-          <div className="loading-content"> Loading the Coins List </div>
+          <div className="loading-content"> Loading The Coins List </div>
         </div>
       );
 
