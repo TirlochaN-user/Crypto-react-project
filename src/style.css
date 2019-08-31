@@ -1,0 +1,13 @@
+body{
+    background-color: rgb(136, 247, 195);
+}
+.header{
+    font-size: 75px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    margin:2px;
+    padding:5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
