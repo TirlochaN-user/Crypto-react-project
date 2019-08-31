@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Form from './Form';
 import './style.css';
 import Header from './Header';
+import ShowCoin from './ShowCoin';
 class App extends Component {
   state = {
     coins: []
@@ -11,7 +11,7 @@ class App extends Component {
     axios.get('https://api.coingecko.com/api/v3/coins/list')
       .then(resolve => {
         this.setState({
-          coins: resolve.data.slice(0, 10)
+          coins: resolve.data
         });
       });
   }
@@ -19,13 +19,14 @@ class App extends Component {
     const { coins } = this.state;
     console.log(coins);
     const coinsList = (coins.length > 0) ? (
-      <Form />
+      <ShowCoin />
     ) :
       (
         <div>
           <div className="loading-content"> Loading the Coins List </div>
         </div>
       );
+
     return (
       <div>
         <Header />
