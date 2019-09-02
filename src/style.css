@@ -32,13 +32,33 @@ body{
     font-weight: 500;
     margin-top: 20px;
 }
-.title{
+.panel-title{
     text-align: center;
     font-size: 30px;
     color:white;
     background-color: rgb(51, 117, 76);
 }
-.title a{
+.panel-title a{
     text-decoration: none;
     color:black;
+}
+.panel-body{
+    display:flex;
+    flex-direction: row;
+}
+.body-description{
+    font-size: 20px;
+    font-weight: 500;
+}
+.left-panel{
+    width:30%;
+    margin:5px;
+    border: 2px solid black;
+}
+.left-panel img{
+    border-bottom: 2px solid black;
+}
+.left-panel-description{
+    font-weight: 500;
+    text-align: center;
 }
