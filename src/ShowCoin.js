@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './Form';
 import axios from 'axios';
+import ReactHtmlParser from 'react-html-parser';
 class ShowCoin extends Component {
     state = {
         details: [
@@ -11,6 +12,8 @@ class ShowCoin extends Component {
             }
         ]
     }
+    description="";
+    descr_elem;
     nametoid = (name) => {
         let id = name.replace(/ /g, "-");
         id = id.toLowerCase();
@@ -23,12 +26,17 @@ class ShowCoin extends Component {
                 this.setState({
                     details: resolve.data
                 })
-            })
+            }) 
 
 
     }
     render() {
         const coins = this.state.details;
+        if(coins.name!=null)
+        {
+            this.description=this.state.details.description.en;
+            this.descr_elem= ReactHtmlParser(this.description);
+        }
         const Coindetails = (coins.name != null) ?
             (
                 <div>
@@ -54,7 +62,7 @@ class ShowCoin extends Component {
                                 </div>
                             </div>
                             <div className="body-description">
-                                {this.state.details.description.en}
+                                {this.descr_elem}
                             </div>
                         </div>
 
