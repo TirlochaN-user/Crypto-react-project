@@ -11,13 +11,18 @@ class ShowCoin extends Component {
             }
         ]
     }
+    nametoid = (name) => {
+        let id = name.replace(/ /g, "-");
+        id = id.toLowerCase();
+        return (id);
+    }
     addcoin = (namereceived) => {
-        axios.get('https://api.coingecko.com/api/v3/coins/' + namereceived)
+        const id = this.nametoid(namereceived);
+        axios.get('https://api.coingecko.com/api/v3/coins/' + id)
             .then(resolve => {
                 this.setState({
                     details: resolve.data
                 })
-                console.log(this.state.details);
             })
 
 

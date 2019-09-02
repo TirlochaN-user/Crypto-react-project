@@ -13,6 +13,7 @@ class App extends Component {
         this.setState({
           coins: resolve.data
         });
+        console.log(this.state.coins);
       });
   }
   render() {

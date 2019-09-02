@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 class Form extends Component {
-    state={
-        name:null
+    state = {
+        name: null
     }
     changeHandler = (e) => {
         this.setState({
-            name : e.target.value
+            name: e.target.value
         })
     }
 
